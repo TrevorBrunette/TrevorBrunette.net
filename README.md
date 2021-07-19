@@ -1,2 +1,2 @@
 ### trevorbrunette.github.io
-Pssst You're not supposed to be here
+Psst you're not supposed to be here -- go to the site instead
