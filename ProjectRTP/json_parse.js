@@ -1,15 +1,17 @@
 const JSONfilename = "AllTransferCoursesBySchool.json";
 const JSONfilepath = "/ProjectRTP/"
 
-let JSONfile = "";
+let JSONfile = JSON.parse(localStorage.getItem("jsonData"));
 let lastQuery = "";
 
 function onClick(){
-    if(JSONfile === ""){
+
+    if(JSONfile === null){
         fetch(JSONfilepath+JSONfilename)
             .then(response => response.json())
             .then(data => {
                 JSONfile = data;
+                window.localStorage.setItem("jsonData", JSON.stringify(JSONfile));
                 queryAndReplace();
             });
     } else {
@@ -68,7 +70,7 @@ function queryJSON(query,query_type = 'rpi_id'){
                 }
             }
         }
-        console.log("\nMatches: " + matches.length);
+        console.log("Matches: " + matches.length);
     } catch (err) {
         console.log('Failed to search JSON file', err);
     }
