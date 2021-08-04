@@ -4,7 +4,7 @@
     <style>
         body {
             width: 940px;
-            margin: auto;
+            margin: auto auto 80px;
             color: #D8D8D8;
             font-family: sans-serif;
             background-color: #212121;
@@ -18,14 +18,19 @@
             margin: auto;
         }
         .footer {
-            position: relative;
+            position: fixed;
             left: 0;
             bottom: 0;
             width: 100%;
-            color: white;
-            text-align: center;
             height: 65px;
             background-color: #181818;
+
+            color: white;
+            text-align: center;
+
+        }
+        .foot-text {
+            margin: 10px;
         }
     </style>
     <meta charset="UTF-8">
@@ -59,7 +64,9 @@
 </body>
 <footer>
     <div class="footer" >
-        <p>RPI Transfer Protocol by Trevor Brunette</p>
+        <p class="foot-text">RPI Transfer Protocol by Trevor Brunette</p>
+        <p class="foot-text">An open source project at my
+            <a href="https://github.com/TrevorBrunette/trevorbrunette.github.io/tree/main/ProjectRTP">GitHub</a></p>
     </div>
 </footer>
 </html>
