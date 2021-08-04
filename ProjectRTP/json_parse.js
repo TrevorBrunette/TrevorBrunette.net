@@ -1,28 +1,70 @@
+const JSONfilename = "AllTransferCoursesBySchool.json";
+const JSONfilepath = "/ProjectRTP/"
+
+let JSONfile = "";
 let lastQuery = "";
 
 function onClick(){
-    let query = document.getElementById("button-input").value.toUpperCase();
-    if(query !== lastQuery && query !== null && !(query.length===0)){
-        removeAllChildNodes(document.getElementById("search-content"));
-        lastQuery = query;
-        modify_document(query);
+    if(JSONfile === ""){
+        fetch(JSONfilepath+JSONfilename)
+            .then(response => response.json())
+            .then(data => {
+                JSONfile = data;
+                queryAndReplace();
+            });
+    } else {
+        queryAndReplace();
     }
 }
 
-function queryJSON_rpiID(query_id){
+function queryAndReplace(){
+    let query = document.getElementById("button-input").value;
+    if(query !== lastQuery && query !== null && !(query.length===0)){
+        removeAllChildNodes(document.getElementById("search-content"));
+        modify_document(query);
+        lastQuery = query;
+    }
+}
+
+function modify_document(query){
+    let result = queryJSON(query,'rpi_id');
+    document.getElementById("search-count").innerText = "Found " + result.length + " matches for " + query + ".";
+    for(let i = 0; i < result.length; i++) {
+        let div = document.createElement("div");
+        div.innerHTML = "<p>School: " + result[i][0] + ", " + result[i][2]
+            + "<br>Transfer Class Title: " + result[i][1].other_school_title + "<br>Transfer Class ID: " + result[i][1].other_school_id
+            + "<br>RPI Class: " + result[i][1].rpi_title + "<br>RPI Class ID: " + result[i][1].rpi_id
+            + "<br>Credits at RPI: " + result[i][1].rpi_credits + "</p>";
+        document.getElementById("search-content").appendChild(div);
+    }
+}
+
+function queryJSON(query,query_type = 'rpi_id'){
     let matches = [];
     try {
-        let rawdata = GetJson();
-        let content = JSON.parse(rawdata);
-        console.log(query_id);
+        let content = JSONfile;
+        console.log(query);
         for (let i = 0; i < content.schools.length; ++i) {
             for (let j = 0; j < content.schools[i].courses.length; ++j) {
                 const course = content.schools[i].courses[j];
-                if (course.rpi_id.includes(query_id)) {
-                    const school = content.schools[i].name;
-                    console.log("\n" + school + ":");
-                    console.log(course)
-                    matches.push([school, course]);
+                const school = content.schools[i].name;
+                const state = content.schools[i].state;
+
+                let attribute = course.rpi_id;
+                if(query_type === 'rpi_id'){
+                    attribute = course.rpi_id;
+                } else if(query_type === 'rpi_title'){
+                    attribute = course.rpi_title;
+                } else if(query_type === 'school'){
+                    attribute = school;
+                } else if(query_type === 'location'){
+                    attribute = state;
+                }
+
+                if (attribute.toUpperCase().includes(query.toUpperCase())) {
+                    //console.log("\n" + school + ":");
+                    //console.log(course)
+                    matches.push([school, course, state]);
                 }
             }
         }
@@ -30,39 +72,11 @@ function queryJSON_rpiID(query_id){
     } catch (err) {
         console.log('Failed to search JSON file', err);
     }
-
     return matches;
-}
-
-function modify_document(query){
-    let result = queryJSON_rpiID(query);
-    document.getElementById("search-count").innerText = "Found " + result.length + " matches for " + query + ".";
-    for(let i = 0; i < result.length; i++) {
-        let div = document.createElement("div");
-        div.innerHTML = "<p>School: " + result[i][0] + "<br>Class Title: " + result[i][1].other_school_title
-            + "<br>Class ID: " + result[i][1].other_school_id + "<br>RPI Course: " + result[i][1].rpi_title
-            + "<br>RPI Course ID: " + result[i][1].rpi_id + "<br>Credits at RPI: " + result[i][1].rpi_credits + "</p>";
-        document.getElementById("search-content").appendChild(div);
-    }
-}
-
-function GetJson(){
-    const filename = "AllTransferCoursesBySchool.json";
-    const filepath = "/ProjectRTP/"
-    var Httpreq = new XMLHttpRequest(); // a new request
-    Httpreq.open("GET", filepath+filename ,false);
-    Httpreq.send(null);
-    return Httpreq.responseText;
 }
 
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
-    }
-}
-
-function search(event) {
-    if(event.key === 'Enter') {
-        onClick();
     }
 }
