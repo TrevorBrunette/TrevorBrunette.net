@@ -48,8 +48,9 @@ function modify_document(query){
 
 function GetJson(){
     const filename = "AllTransferCoursesBySchool.json";
-    var Httpreq = new XMLHttpRequest(); // a new request
-    Httpreq.open("GET", "/"+filename ,false);
+    const path = "/test-server/"
+    var Httpreq = new XMLHttpRequest();
+    Httpreq.open("GET", path+filename ,false);
     Httpreq.send(null);
     return Httpreq.responseText;
 }
