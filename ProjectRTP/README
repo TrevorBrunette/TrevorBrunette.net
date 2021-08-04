@@ -1,0 +1,4 @@
+RPI Transfer Protocol trevorbrunette.github.io/ProjectRTP/
+
+This webpage is designed to assist in searching for classes which transfer to my current college, Rensselaer Polytechnic Institute. 
+Currently, it uses the JSON file which I generate/provide, caches it, and uses it for queries to determine which courses at which college transfer to a certain course at RPI. Future plans for development include: search different fields besdies RPI course id, search all fields simulteniously, better CSS and webpage design, and an About page which will reference this file.
