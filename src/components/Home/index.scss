@@ -1,0 +1,76 @@
+@use "src/color";
+
+.home-page {
+  h1 {
+    font-family: "Coolvetica", sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+
+    &::before {
+      font-family: "La Belle Aurore", sans-serif;
+      font-size: 18px;
+      color: color.$primary;
+      opacity: 0.625;
+
+      position: absolute;
+      margin-top: -10px;
+      content: "<h1>";
+    }
+
+    &::after {
+      font-family: "La Belle Aurore", sans-serif;
+      font-size: 18px;
+      color: color.$primary;
+      opacity: 0.625;
+
+      position: absolute;
+      margin-top: 42px;
+      margin-left: 20px;
+      content: "</h1>"
+    }
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 400;
+    color: color.$white-alt;
+    letter-spacing: 1px;
+  }
+
+  .flat-button {
+    font-family: sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: color.$primary;
+
+    text-decoration: none;
+    margin-top: 24px;
+    padding: 10px 18px;
+    border: 1px solid;
+    float: left;
+
+    &:hover {
+      background: color.$primary;
+      color: color.$background;
+    }
+  }
+
+  .big-name {
+    font-family: "Autumn Flowers", "Helvetica Neue", sans-serif;
+    font-size: 68px;
+    color: color.$white;
+    margin-top: 32px;
+    margin-bottom: 0;
+    line-height: 60px;
+  }
+
+  .text-zone {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 60%;
+    max-height: 90%;
+    transform: translateY(-50%);
+  }
+}
