@@ -21,30 +21,6 @@
       margin-bottom: 0;
       position: relative;
       left: 10px;
-
-      &::before {
-        font-family: "La Belle Aurore", sans-serif;
-        font-size: 18px;
-        color: color.$primary;
-        opacity: 0.625;
-
-        position: absolute;
-        margin-top: -10px;
-        left: -10px;
-        content: "<h1>";
-      }
-
-      &::after {
-        font-family: "La Belle Aurore", sans-serif;
-        font-size: 18px;
-        color: color.$primary;
-        opacity: 0.625;
-
-        position: absolute;
-        margin-top: 42px;
-        margin-left: 20px;
-        content: "</h1>"
-      }
     }
 
     h2 {
@@ -65,6 +41,11 @@
     a {
       font-size: 28px;
       color: color.$primary;
+      padding: 4px;
+      &:hover {
+        color: color.$accent;
+        border: 1px outset color.$accent;
+      }
     }
 
 

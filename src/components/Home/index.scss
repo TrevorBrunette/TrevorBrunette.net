@@ -5,30 +5,6 @@
     font-family: "Coolvetica", sans-serif;
     font-size: 56px;
     font-weight: 400;
-
-    &::before {
-      font-family: "La Belle Aurore", sans-serif;
-      font-size: 18px;
-      color: color.$primary;
-      opacity: 0.625;
-
-      position: absolute;
-      margin-top: -10px;
-      left: -10px;
-      content: "<h1>";
-    }
-
-    &::after {
-      font-family: "La Belle Aurore", sans-serif;
-      font-size: 18px;
-      color: color.$primary;
-      opacity: 0.625;
-
-      position: absolute;
-      margin-top: 42px;
-      margin-left: 20px;
-      content: "</h1>"
-    }
   }
 
   h2 {

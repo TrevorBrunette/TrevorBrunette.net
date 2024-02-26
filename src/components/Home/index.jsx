@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="container home-page">
       <div className="text-zone">
-        <h1>
+        <h1 className="tags-h1">
           Hi, I'm
           <br/>
           <p className="big-name">Trevor Brunette, </p>

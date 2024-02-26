@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e12d4a32.css",
+    "main.js": "/static/js/main.80dedfd8.js",
+    "static/media/AutumnFlowers.otf": "/static/media/AutumnFlowers.e16de810e2ba715e470b.otf",
+    "static/media/helvetica-neu.ttf": "/static/media/helvetica-neu.8a19678078a6b21c8057.ttf",
+    "static/media/LaBelleAurore.woff2": "/static/media/LaBelleAurore.a83c1c58fd7e43972e4a.woff2",
+    "static/media/CoolveticaRg-Regular.woff2": "/static/media/CoolveticaRg-Regular.7d1f3b1dd46ad6557a17.woff2",
+    "index.html": "/index.html",
+    "main.e12d4a32.css.map": "/static/css/main.e12d4a32.css.map",
+    "main.80dedfd8.js.map": "/static/js/main.80dedfd8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e12d4a32.css",
+    "static/js/main.80dedfd8.js"
+  ]
+}

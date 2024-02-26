@@ -5,7 +5,7 @@ function About() {
   return (
     <div className="container about-page">
       <div className="text-zone">
-        <h1>
+        <h1 className="tags-h1">
           About me
         </h1>
         <p>
@@ -19,8 +19,8 @@ function About() {
           of open source software in these languages; see descriptions of some of
           my work in the projects section below.
         </p>
-        <h1>Projects</h1>
-        <h2><Link to="https://github.com/ezasm-org/ezasm">EzASM</Link></h2>
+        <h1 className="tags-h1">Projects</h1>
+        <h2><Link target="_blank" rel="noreferrer" to="https://github.com/ezasm-org/ezasm">EzASM</Link></h2>
         <p>
           The goal of this project is to create a small-instruction-set
           programming language interpreter written in Java with a GUI interface
@@ -43,7 +43,7 @@ function About() {
 
         </p>
 
-        <h2><Link to="https://github.com/ezasm-org/rezasm">REzASM</Link></h2>
+        <h2><Link target="_blank" rel="noreferrer" to="https://github.com/ezasm-org/rezasm">REzASM</Link></h2>
         <p>
           A port of the EzASM programs written in Rust. I personally worked with
           Rust, JavaScript, and ReactJS, and WASM to build the backbone of this

@@ -9,7 +9,7 @@
 /coverage
 
 # production
-/build
+# we have to upload the /build directory to github to host the page
 
 # misc
 .DS_Store
