@@ -1,0 +1,52 @@
+@use "src/color";
+
+.contact-page {
+  .text-zone {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 35%;
+    min-width: 360px;
+    max-height: 90%;
+    transform: translateY(-50%);
+    vertical-align: middle;
+    display: table-cell;
+
+    h1 {
+      font-family: "Coolvetica", sans-serif;
+      font-size: 56px;
+      font-weight: 400;
+
+      &::before {
+        font-family: "La Belle Aurore", sans-serif;
+        font-size: 18px;
+        color: color.$primary;
+        opacity: 0.625;
+
+        position: absolute;
+        margin-top: -10px;
+        left: -10px;
+        content: "<h1>";
+      }
+
+      &::after {
+        font-family: "La Belle Aurore", sans-serif;
+        font-size: 18px;
+        color: color.$primary;
+        opacity: 0.625;
+
+        position: absolute;
+        margin-top: 42px;
+        margin-left: 20px;
+        content: "</h1>"
+      }
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 600;
+      color: color.$white-alt;
+      letter-spacing: 1px;
+    }
+  }
+}
