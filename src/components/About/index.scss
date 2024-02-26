@@ -1,0 +1,72 @@
+@use "src/color";
+
+.about-page {
+  .text-zone {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 35%;
+    min-width: 360px;
+    max-height: 90%;
+    transform: translateY(-50%);
+    vertical-align: middle;
+    display: table-cell;
+
+    h1 {
+      font-size: 56px;
+      font-family: "Coolvetica";
+      color: color.$primary;
+      font-weight: 400;
+      margin-top: 20px;
+      margin-bottom: 0;
+      position: relative;
+      left: 10px;
+
+      &::before {
+        font-family: "La Belle Aurore", sans-serif;
+        font-size: 18px;
+        color: color.$primary;
+        opacity: 0.625;
+
+        position: absolute;
+        margin-top: -10px;
+        left: -10px;
+        content: "<h1>";
+      }
+
+      &::after {
+        font-family: "La Belle Aurore", sans-serif;
+        font-size: 18px;
+        color: color.$primary;
+        opacity: 0.625;
+
+        position: absolute;
+        margin-top: 42px;
+        margin-left: 20px;
+        content: "</h1>"
+      }
+    }
+
+    h2 {
+      font-family: "Helvetica Neue";
+      font-weight: 600;
+      position: relative;
+      left: 10px;
+    }
+
+    p {
+      font-family: serif;
+      font-size: 14px;
+      font-weight: 400;
+      text-indent: 28px;
+      color: color.$foreground
+    }
+
+    a {
+      font-size: 28px;
+      color: color.$primary;
+    }
+
+
+  }
+}

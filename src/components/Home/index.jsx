@@ -11,7 +11,7 @@ function Home() {
           <p className="big-name">Trevor Brunette, </p>
           software engineer
         </h1>
-        <h2>Software Engineer | C/C++ Practitioner | Java Expert</h2>
+        <h2>Embedded Software Engineer | C/C++ Practitioner | Java Expert</h2>
         <Link to="/contact" className="flat-button">CONTACT ME</Link>
       </div>
     </div>

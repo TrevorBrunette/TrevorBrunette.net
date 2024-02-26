@@ -6,6 +6,8 @@
     font-size: 56px;
     font-weight: 400;
 
+    padding-top: 100px;
+
     &::before {
       font-family: "La Belle Aurore", sans-serif;
       font-size: 18px;
@@ -14,6 +16,7 @@
 
       position: absolute;
       margin-top: -10px;
+      left: -10px;
       content: "<h1>";
     }
 
@@ -32,7 +35,7 @@
 
   h2 {
     font-size: 22px;
-    font-weight: 400;
+    font-weight: 600;
     color: color.$white-alt;
     letter-spacing: 1px;
   }
